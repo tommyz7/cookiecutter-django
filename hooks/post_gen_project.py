@@ -338,6 +338,25 @@ def main():
 
     if "{{ cookiecutter.use_travisci }}".lower() == "n":
         remove_dottravisyml_file()
+        
+    from cookiecutter.main import cookiecutter
+
+    cookiecutter(
+        'git@github.com:goldhand/cookiecutter-webpack.git',
+        replay=False, overwrite_if_exists=True, output_dir='../',
+        checkout=None, no_input=True, extra_context={
+          'project_name': '{{ cookiecutter.project_name }}',
+          'repo_name': '{{ cookiecutter.repo_name }}',
+          'repo_owner': 'goldhand',
+          'static_root': '{{ cookiecutter.project_dir }}/static/{{ cookiecutter.project_dir }}',
+          'production_output_path': '{{ cookiecutter.project_dir }}/static/{{ cookiecutter.project_dir }}/dist/',
+          'author_name': '{{ cookiecutter.author_name }}',
+          'description': '{{ cookiecutter.description }}',
+          'version': '{{ cookiecutter.version }}',
+          'existing_project': 'y',
+          'css_extension': 'sass',
+          'use_ejs': 'n'
+      })
 
     print(SUCCESS + "Project initialized, keep up the good work!" + TERMINATOR)
 
