@@ -346,7 +346,7 @@ def main():
         replay=False, overwrite_if_exists=True, output_dir='../',
         checkout=None, no_input=True, extra_context={
           'project_name': '{{ cookiecutter.project_name }}',
-          'repo_name': '{{ cookiecutter.repo_name }}',
+          'repo_name': '{{ cookiecutter.project_slug }}',
           'repo_owner': 'goldhand',
           'static_root': '{{ cookiecutter.project_dir }}/static/{{ cookiecutter.project_dir }}',
           'production_output_path': '{{ cookiecutter.project_dir }}/static/{{ cookiecutter.project_dir }}/dist/',
