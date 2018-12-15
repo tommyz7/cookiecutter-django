@@ -342,7 +342,7 @@ def main():
     from cookiecutter.main import cookiecutter
 
     cookiecutter(
-        'git@github.com:goldhand/cookiecutter-webpack.git',
+        'https://github.com/goldhand/cookiecutter-webpack',
         replay=False, overwrite_if_exists=True, output_dir='../',
         checkout=None, no_input=True, extra_context={
           'project_name': '{{ cookiecutter.project_name }}',
